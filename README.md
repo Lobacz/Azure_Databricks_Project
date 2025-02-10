@@ -25,11 +25,11 @@ The dataset comprises ten CSV files, one for
 
 1. **Data Ingestion**
 
-- **CopySalesData**: Bulk load all sales data from Github repository to `bronze` folder in ADLS Gen2.
+- **CopySourceData**: Bulk load all sales data from Github repository to `bronze` folder in ADLS Gen2.
 - **Increm_data_pipeline**: Pipleline for incremental load new sales data
 
-![ADF1](ScreenShots/adf1.png)
-![ADF2](ScreenShots/adf1.png)
+![ADF1](ScreenShots/ADF1.png)
+![ADF2](ScreenShots/ADF2.png)
 
 
 2. **Data Transformation**  

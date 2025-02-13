@@ -17,11 +17,18 @@ The dataset comprises ten CSV files, one for
 
 ## 🔧 Azure Services Utilized
 ### 1. Azure Data Factory (ADF)
+- Pipeline for copying data from GitHub to Azure SQL Database
+- Pipeline for incremental data loading from Azure SQL Database to Azure Data Lake Storage Gen2 (ADLS Gen2)
 ### 2. Azure Data Lake Storage Gen2 (ADLS Gen2)
-### 3. Azure Databricks
-
+- Storage data from all layers: Bronze, Silver, and Gold
+### 3. Azure SQL Database
+- Storage raw data
+- WaterMarkTable for incremental load
+### 4. Azure Databricks
+- Star schema architecture
+- Implementing Slowly Changing Dimensions (SCD1)
 ---
-## 🛠️ ETL Process  
+## 🛠️ Process Description
 
 1. **Data Ingestion**
 
@@ -33,13 +40,20 @@ The dataset comprises ten CSV files, one for
 
 
 2. **Data Transformation**  
-in proggres
+- **silver_notebook**: Read data from `bronze` folder, transform and write to `silver` table 
+![DB1](ScreenShots/DB1.png)
+
+- **gold_dim_notebook**: Four notebooks for creating dimensions with SCD Type 1
+![DB2](ScreenShots/DB2.png)
+![DB3](ScreenShots/DB3.png)
 
 
-## ✨ Key Features  
-in proggres
+- **gold_fact_notebook**: Creating a fact table and connecting it with dimensions using keys. Writing Fact Table
+![DB4](ScreenShots/DB4.png)
 
----
+- **Workflow**: Creating a workflow to run all notebooks and refresh data in the dimensions and fact table
+![DB5](ScreenShots/DB5.png)
+
 
  ## 📌 Conclusion 
  

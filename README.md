@@ -55,7 +55,14 @@ The dataset comprises ten CSV files, one for
 ![DB5](ScreenShots/DB5.png)
 
 
- ## 📌 Conclusion 
+ ## 📌 Project Summary
+In this project, I developed an ETL process using Azure Data Factory (ADF) to load data, including incremental data loading. To enable incremental loading, I used an SQL database with a watermark table, which allowed me to track and identify the data that had already been loaded.
+
+Next, I retrieved data from the Bronze layer in Databricks, transformed it, and saved it in the Silver layer. I then created dimensions and procedures to load the data, including two separate statuses for the initial load and subsequent loads. Each dimension was implemented with Slowly Changing Dimension (SCD) Type 1 logic.
+
+Afterward, I created a fact table and connected it to the dimensions using keys, then loaded the data into the fact table. 
+
+Finally, I built a workflow that integrates all previous steps, refreshing the Silver layer and reloading the dimensions and fact table.
  
 in proggres
 ---

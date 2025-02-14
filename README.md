@@ -42,10 +42,11 @@ The dataset comprises ten CSV files, one for
 2. **Data Transformation**  
 - **silver_notebook**: Read data from `bronze` folder, transform and write to `silver` table 
 - **gold_dim_notebook**: Four notebooks for creating dimensions with SCD Type 1
+ ![DB1](ScreenShots/DB1.png)
  ![DB2](ScreenShots/DB2.png)
 - **gold_fact_notebook**: Creating a fact table and connecting it with dimensions using keys. Writing Fact Table
 - **Workflow**: Creating a workflow to run all notebooks and refresh data in the dimensions and fact table
-![DB5](ScreenShots/DB5.png)
+![DB3](ScreenShots/DB3.png)
 
 
  ## 📌 Project Summary
